@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/viewprofile"
+    android:background="@color/colorPrimary"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <TextView
+            android:id="@+id/profileName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="serif"
+            android:text="Your Name"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/profileImageCardView"
+            app:layout_constraintTop_toBottomOf="@+id/coverProfile" />
+
+        <TextView
+            android:id="@+id/profileBio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/light_gray"
+            android:fontFamily="serif"
+            android:padding="15dp"
+            android:text="Your Bio Will Be Displayed Here.... Write Something About Your Self..\n----Change Your Bio From Setting----\nExample:\nAim : To win Hearts\nBe Happy And Win Hearts.."
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileName" />
+
+        <ImageView
+            android:id="@+id/coverProfile"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginRight="2dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/border"
+            android:foregroundGravity="bottom"
+            android:maxHeight="180dp"
+            android:src="@drawable/border"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--show round images-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/profileImageCardView"
+            android:layout_width="134dp"
+            android:layout_height="134dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="130dp"
+            android:elevation="12dp"
+            android:foregroundGravity="top"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="67dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="65dp">
+
+                <ImageView
+                    android:id="@+id/profileImage"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/circle_invisible"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/view_profile" />
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ViewProfile_post_RecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/post_data" />
+
+        <Button
+            android:id="@+id/upload_post"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginRight="6dp"
+            android:background="@drawable/blue_button"
+            android:fontFamily="serif"
+            android:text="Upload Post"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/post_data"
+            app:layout_constraintTop_toBottomOf="@+id/select_photo"
+            app:layout_constraintWidth_percent=".3" />
+
+        <EditText
+            android:id="@+id/post_data"
+            android:layout_width="0dp"
+            android:layout_height="74dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/border"
+            android:ems="10"
+            android:fontFamily="serif"
+            android:hint="@string/write_about_post"
+            android:inputType="textPersonName"
+            android:minHeight="70dp"
+            android:padding="4dp"
+            android:paddingStart="10dp"
+            android:paddingLeft="10dp"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/select_photo"
+            app:layout_constraintHeight_percent=".10"
+            app:layout_constraintStart_toStartOf="@id/profileBio"
+            app:layout_constraintTop_toBottomOf="@+id/card_content"
+            app:layout_constraintWidth_percent=".65" />
+
+        <Button
+            android:id="@+id/select_photo"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginRight="6dp"
+            android:background="@drawable/green_button"
+            android:fontFamily="serif"
+            android:text="Select Photo"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/post_data"
+            app:layout_constraintTop_toBottomOf="@+id/friends"
+            app:layout_constraintWidth_percent=".3" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_content"
+            android:layout_width="0dp"
+            android:layout_gravity="center"
+            android:layout_height="100dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileBio"
+            app:layout_constraintWidth_percent=".50"
+            app:cardCornerRadius="5dp">
+            <ImageView
+                android:id="@+id/collection_images"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/photo_default"
+                android:background="@drawable/border"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                android:contentDescription="Your Images" />
+            <TextView
+                android:id="@+id/show_images"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/green_button"
+                android:fontFamily="serif-monospace"
+                android:text="Show Images"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:padding="5dp"
+                android:layout_gravity="bottom"/>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <Button
+            android:id="@+id/about"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/liked_blue"
+            android:fontFamily="serif"
+            android:text="About"
+            android:textColor="@color/signup_button"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileBio"
+            app:layout_constraintWidth_percent=".45" />
+
+        <Button
+            android:id="@+id/friends"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:fontFamily="serif"
+            android:text="Friends"
+            android:background="@drawable/liked_blue"
+            android:textColor="@color/signup_button"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/about"
+            app:layout_constraintWidth_percent=".45" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>

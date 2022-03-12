@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimary"
+    tools:context="amit.example.lilichatians.ui.Message_List.Message_List">
+
+    <ProgressBar
+        android:id="@+id/progressBar_message_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/message_none"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="150sp"
+        android:fontFamily="serif"
+        android:layout_marginTop="20dp"
+        android:text="No Messages Yet"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/message_list_fragment_recyclerView"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</FrameLayout>
