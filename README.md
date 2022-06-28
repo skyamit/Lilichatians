@@ -44,7 +44,7 @@ I have uploaded this application in PlayStore : [Lilichatians](https://play.goog
 | Color             | Hex                                                                |
 | ----------------- | ------------------------------------------------------------------ |
 | Old Brick | ![#b33b3c](https://via.placeholder.com/10/00b48a?text=+) #b33b3c |
-| San Marino | ![##3f51b5](https://via.placeholder.com/10/00b48a?text=+) #3f51b5 |
+| San Marino | ![#3f51b5](https://via.placeholder.com/10/00b48a?text=+) #3f51b5 |
 
 
 ## Contributing
